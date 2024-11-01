@@ -1,0 +1,442 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(34, 34, 34);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*border: 1px solid #fff;*/
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: 0px 10px 25px -8px #000;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("bgcoringa.jpg") no-repeat center center/cover;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #000);
+  z-index: -1;
+}
+
+header video {
+  position: absolute;
+  width: 120%;
+  height: 190%;
+  bottom: -47%;
+  z-index: -1;
+}
+
+header nav {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+header nav .logo_ul {
+  display: flex;
+}
+
+header nav .logo_ul img {
+  width: 72px;
+}
+
+header nav .logo_ul ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+header nav .logo_ul li {
+  padding: 3px 15px;
+}
+
+header nav .logo_ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.3s linear;
+}
+
+header nav .logo_ul li a:hover {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+header nav .search {
+  left: 290px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .search input {
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background: rgb(255, 255, 255, 0.3);
+  color: #fff;
+  margin-right: 20px;
+}
+
+header nav .search input::placeholder {
+  color: #fff;
+}
+
+header nav .perfil {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header nav .perfil img {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+}
+
+header nav .perfil .seta {
+  color: #fff;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+header nav .perfil .seta:hover {
+  color: rgb(255, 255, 255, 0.7);
+}
+
+header nav .perfil2 {
+  position: absolute;
+  width: 200px;
+  color: #fff;
+  font-size: 16px;
+  top: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+}
+
+header nav .perfil2 .bi-star-fill {
+  color: yellow;
+  display: flex;
+  cursor: pointer;
+}
+
+header nav .perfil2 .bi-star-fill p {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+header nav .perfil2 .bi-gear-fill {
+  color: #fff;
+  display: flex;
+  cursor: pointer;
+}
+
+header nav .perfil2.show {
+  max-height: 200px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.nav-item {
+  color: transparent;
+}
+
+header section {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 0px 50px;
+  color: #fff;
+  bottom: 20px;
+}
+
+header section .cards,
+.cards2,
+.cards3,
+.cards4 {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  /*border: solid 1px #fff;*/
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+header section .cards::-webkit-scrollbar,
+.cards2::-webkit-scrollbar,
+.cards3::-webkit-scrollbar,
+.cards4::-webkit-scrollbar {
+  display: none;
+}
+
+header section .cards.card,
+.cards2.card,
+.cards3.card,
+.cards4.card {
+  position: relative;
+  min-width: 300px;
+  height: 170px;
+  /*border: solid 1px #fff;*/
+  margin-right: 10px;
+  background: #000;
+  transition: 0.3 linear;
+}
+header section .cards .card,
+.cards2 .card,
+.cards3 .card,
+.cards4 .card {
+  position: relative;
+  min-width: 300px;
+  height: 170px;
+  /*border: solid 1px #fff;*/
+  margin-right: 10px;
+  background: #000;
+  transition: 0.3 linear;
+}
+
+header section .cards .card .poster,
+.cards2 .card .poster,
+.cards3 .card .poster,
+.cards4 .card .poster {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+header section .cards .card:hover,
+.cards2 .card:hover,
+.cards3 .card:hover,
+.cards4 .card:hover {
+  min-width: 300px;
+  overflow: hidden;
+}
+
+header section .cards .card .rest_card,
+.cards2 .card .rest_card,
+.cards3 .card .rest_card,
+.cards4 .card .rest_card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999999999;
+  opacity: 0;
+  transition: 200ms linear;
+}
+
+header section .cards .card .rest_card img,
+.cards2 .card .rest_card img,
+.cards3 .card .rest_card img,
+.cards4 .card .rest_card img {
+  position: relative;
+  width: 101%;
+  height: 101%;
+  z-index: -1;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+}
+
+header section .cards .card .rest_card::after,
+.cards2 .card .rest_card::after,
+.cards3 .card .rest_card::after,
+.cards4 .card .rest_card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #000);
+  left: 0;
+  bottom: 0;
+}
+
+header section .cards .card .rest_card .cont,
+.cards2 .card .rest_card .cont,
+.cards3 .card .rest_card .cont,
+.cards4 .card .rest_card .cont {
+  position: absolute;
+  color: #fff;
+  width: 100%;
+  bottom: 10px;
+  left: 0;
+  padding: 0px 20px;
+  z-index: 999;
+}
+
+header section .cards .card .rest_card .cont img,
+.cards2 .card .rest_card .cont img,
+.cards3 .card .rest_card .cont img,
+.cards4 .card .rest_card .cont img {
+  filter: none;
+  position: absolute;
+  bottom: 45px;
+  left: 120px;
+  width: 60px;
+  height: 60px;
+  transition: 0.3s linear;
+}
+
+header section .cards .card:hover .rest_card .cont img,
+.cards2 .card:hover .rest_card .cont img,
+.cards3 .card:hover .rest_card .cont img,
+.cards4 .card:hover .rest_card .cont img {
+  filter: none;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 100px;
+  bottom: 30px;
+}
+
+header section .cards .card .rest_card .cont .sub,
+.cards2 .card .rest_card .cont .sub,
+.cards3 .card .rest_card .cont .sub,
+.cards4 .card .rest_card .cont .sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header section .cards .card .rest_card .cont .sub p,
+.cards2 .card .rest_card .cont .sub p,
+.cards3 .card .rest_card .cont .sub p,
+.cards4 .card .rest_card .cont .sub p {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgb(255, 255, 255, 0.7);
+}
+
+header section .cards .card .rest_card .cont .sub h3,
+.cards2 .card .rest_card .cont .sub h3,
+.cards3 .card .rest_card .cont .sub h3,
+.cards4 .card .rest_card .cont .sub h3 {
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+header section .cards .card:hover .rest_card,
+.cards2 .card:hover .rest_card,
+.cards3 .card:hover .rest_card,
+.cards4 .card:hover .rest_card {
+  opacity: 1;
+}
+
+header section .bi-chevron-left,
+.bi-chevron-right {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  width: 25px;
+  height: 25px;
+  background: rgb(255, 255, 255, 0.3);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3 linear;
+  z-index: 999999;
+  opacity: 0;
+}
+
+header section .bi-chevron-right {
+  left: unset;
+  right: 1%;
+}
+
+header section:hover .bi-chevron-right {
+  opacity: 1;
+}
+
+header section:hover .bi-chevron-left {
+  opacity: 1;
+}
+
+.anime {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.anime.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.populares {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.populares.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.filmes {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.filmes.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.series {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.series.show {
+  opacity: 1;
+  visibility: visible;
+}
