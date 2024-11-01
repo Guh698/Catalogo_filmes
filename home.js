@@ -47,7 +47,7 @@ right_btn4.addEventListener("click", () => {
   cards4.scrollLeft += 140;
 });
 
-anime.classList.add("show");
+populares.classList.add("show");
 
 document.addEventListener("DOMContentLoaded", function () {
   const seta = document.querySelector(".seta");
