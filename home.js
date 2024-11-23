@@ -18,6 +18,11 @@ const anime = document.getElementById("animes");
 const populares = document.getElementById("populares");
 const serie = document.getElementById("series");
 const filme = document.getElementById("filmes");
+const contact = document.getElementById("contact");
+const contactssreen = document.getElementById("contacts");
+const closetabicon = document.getElementById("closetab");
+const seta = document.querySelector(".seta");
+const content = document.querySelector(".perfil2");
 
 left_btn.addEventListener("click", () => {
   cards.scrollLeft -= 140;
@@ -49,16 +54,11 @@ right_btn4.addEventListener("click", () => {
 
 populares.classList.add("show");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const seta = document.querySelector(".seta");
-  const content = document.querySelector(".perfil2");
-
-  if (seta && content) {
-    seta.addEventListener("click", function () {
-      content.classList.toggle("show");
-    });
-  }
-});
+if (seta && content) {
+  seta.addEventListener("click", function () {
+    content.classList.toggle("show");
+  });
+}
 
 if (animebotao && populares && anime && serie && filme && populares) {
   animebotao.addEventListener("click", function () {
@@ -93,5 +93,18 @@ if (filmebotao && populares && anime && serie && filme && populares) {
     populares.classList.remove("show");
     serie.classList.remove("show");
     filme.classList.add("show");
+  });
+}
+
+if (contact && contactssreen && seta && content) {
+  contact.addEventListener("click", function () {
+    contactssreen.classList.add("show");
+    content.classList.remove("show");
+  });
+}
+
+if (closetabicon && contact && contactssreen) {
+  closetabicon.addEventListener("click", function () {
+    contactssreen.classList.remove("show");
   });
 }
