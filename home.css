@@ -4,7 +4,9 @@
   .conteudo {
     overflow-y: auto;
   }
-
+  header {
+    height: 100%;
+  }
   header nav .logo_ul img {
     width: 52px;
     margin-top: 20px;
@@ -43,9 +45,13 @@
     visibility: hidden;
   }
 
-  .cards {
+  .card {
     overflow-y: hidden;
     overflow-x: hidden;
+  }
+
+  .cards {
+    overflow-x: auto;
   }
 }
 
