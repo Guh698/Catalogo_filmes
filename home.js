@@ -66,29 +66,11 @@ right_btn4.addEventListener("click", () => {
 populares.classList.add("show");
 
 const video_coringa = document.getElementById("Coringa");
-video_coringa.classList.remove("show");
-video_coringa.muted = true;
-video_coringa.pause();
 const video_assimqueacaba = document.getElementById("É_Assim_que_acaba");
-video_assimqueacaba.classList.remove("show");
-video_assimqueacaba.muted = true;
-video_assimqueacaba.pause();
 const video_bladerunner = document.getElementById("Blade_Runner_2049");
-video_bladerunner.classList.remove("show");
-video_bladerunner.muted = true;
-video_bladerunner.pause();
 const video_oabutre = document.getElementById("O_abutre");
-video_oabutre.classList.remove("show");
-video_oabutre.muted = true;
-video_oabutre.pause();
 const video_oculpado = document.getElementById("culpado_tr");
-video_oculpado.classList.remove("show");
-video_oculpado.muted = true;
-video_oculpado.pause();
 const video_terrifier = document.getElementById("Terrifier_3");
-video_terrifier.classList.remove("show");
-video_terrifier.muted = true;
-video_terrifier.pause();
 
 document.addEventListener("DOMContentLoaded", function () {
   const input = document.getElementById("search_input");
@@ -99,55 +81,40 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event.key === "Enter") {
       const valorSelecionado = input.value.trim();
 
+      // Esconde todos os vídeos primeiro
+      video_coringa.classList.remove("show");
+      video_assimqueacaba.classList.remove("show");
+      video_bladerunner.classList.remove("show");
+      video_oabutre.classList.remove("show");
+      video_oculpado.classList.remove("show");
+      video_terrifier.classList.remove("show");
+
+      populares.classList.remove("show");
+      filme.classList.remove("show");
+      aviso.classList.remove("show");
+
       if (valorSelecionado === "") {
         populares.classList.add("show");
-        filme.classList.remove("show");
-        aviso.classList.remove("show");
-        video_oculpado.classList.remove("show");
-        video_assimqueacaba.classList.remove("show");
-        video_coringa.classList.remove("show");
-        video_oabutre.classList.remove("show");
-        video_terrifier.classList.remove("show");
-        video_bladerunner.classList.remove("show");
       } else if (valorSelecionado === "O culpado") {
         video_oculpado.classList.add("show");
-        populares.classList.remove("show");
-        filme.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else if (valorSelecionado === "É Assim que acaba") {
         video_assimqueacaba.classList.add("show");
-        populares.classList.remove("show");
-        filme.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else if (valorSelecionado === "Coringa: Delírio a dois") {
         video_coringa.classList.add("show");
-        populares.classList.remove("show");
-        filme.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else if (valorSelecionado === "O abutre") {
         video_oabutre.classList.add("show");
-        populares.classList.remove("show");
-        filme.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else if (valorSelecionado === "Terrifier 3") {
         video_terrifier.classList.add("show");
-        filme.classList.remove("show");
-        populares.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else if (valorSelecionado === "Blade Runner 2049") {
         video_bladerunner.classList.add("show");
-        populares.classList.remove("show");
-        filme.classList.remove("show");
         closefilme.classList.add("show");
-        aviso.classList.remove("show");
       } else {
-        populares.classList.add("show");
-        aviso.classList.toggle("show");
+        aviso.classList.add("show");
       }
     }
   });
@@ -332,153 +299,56 @@ if (window.matchMedia("(max-width: 500px)").matches) {
   filme.classList.add("show");
   anime.classList.add("show");
 
-  const video_coringa = document.getElementById("Coringa");
-  video_coringa.classList.remove("show");
-  video_coringa.muted = true;
-  video_coringa.pause();
-  const video_assimqueacaba = document.getElementById("É_Assim_que_acaba");
-  video_assimqueacaba.classList.remove("show");
-  video_assimqueacaba.muted = true;
-  video_assimqueacaba.pause();
-  const video_bladerunner = document.getElementById("Blade_Runner_2049");
-  video_bladerunner.classList.remove("show");
-  video_bladerunner.muted = true;
-  video_bladerunner.pause();
-  const video_oabutre = document.getElementById("O_abutre");
-  video_oabutre.classList.remove("show");
-  video_oabutre.muted = true;
-  video_oabutre.pause();
-  const video_oculpado = document.getElementById("culpado_tr");
-  video_oculpado.classList.remove("show");
-  video_oculpado.muted = true;
-  video_oculpado.pause();
-  const video_terrifier = document.getElementById("Terrifier_3");
-  video_terrifier.classList.remove("show");
-  video_terrifier.muted = true;
-  video_terrifier.pause();
+  if (
+    closefilme &&
+    video_assimqueacaba &&
+    video_bladerunner &&
+    video_coringa &&
+    video_oabutre &&
+    video_oculpado &&
+    video_terrifier &&
+    populares &&
+    filme &&
+    serie &&
+    anime
+  ) {
+    closefilme.addEventListener("click", function () {
+      video_assimqueacaba.classList.remove("show");
+      video_bladerunner.classList.remove("show");
+      video_coringa.classList.remove("show");
+      video_oabutre.classList.remove("show");
+      video_oculpado.classList.remove("show");
+      video_terrifier.classList.remove("show");
+      closefilme.classList.remove("show");
+      populares.classList.add("show");
+      serie.classList.add("show");
+      filme.classList.add("show");
+      anime.classList.add("show");
+    });
+  }
+}
 
-  if (poster_coringa) {
-    poster_coringa.addEventListener("click", function () {
-      video_coringa.classList.toggle("show");
-      video_assimqueacaba.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_coringa2) {
-    poster_coringa2.addEventListener("click", function () {
-      video_coringa.classList.toggle("show");
-      video_assimqueacaba.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_assimqueacaba) {
-    poster_assimqueacaba.addEventListener("click", function () {
-      video_assimqueacaba.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_bladerunner) {
-    poster_bladerunner.addEventListener("click", function () {
-      video_bladerunner.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_assimqueacaba.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_oabutre) {
-    poster_oabutre.addEventListener("click", function () {
-      video_oabutre.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_assimqueacaba.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_oabutre2) {
-    poster_oabutre2.addEventListener("click", function () {
-      video_oabutre.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_assimqueacaba.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_oculpado) {
-    poster_oculpado.addEventListener("click", function () {
-      video_oculpado.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_assimqueacaba.classList.remove("show");
-      video_terrifier.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
-  if (poster_terrifier) {
-    poster_terrifier.addEventListener("click", function () {
-      video_terrifier.classList.toggle("show");
-      video_coringa.classList.remove("show");
-      video_bladerunner.classList.remove("show");
-      video_oabutre.classList.remove("show");
-      video_oculpado.classList.remove("show");
-      video_assimqueacaba.classList.remove("show");
-      populares.classList.remove("show");
-      anime.classList.remove("show");
-      serie.classList.remove("show");
-      filme.classList.remove("show");
-      closefilme.classList.add("show");
-    });
-  }
+if (
+  window.matchMedia("(max-width: 900px) and (orientation: landscape)").matches
+) {
+  populares.classList.add("show");
+  serie.classList.add("show");
+  filme.classList.add("show");
+  anime.classList.add("show");
 
-  if (closefilme && video_assimqueacaba && video_bladerunner) {
+  if (
+    closefilme &&
+    video_assimqueacaba &&
+    video_bladerunner &&
+    video_coringa &&
+    video_oabutre &&
+    video_oculpado &&
+    video_terrifier &&
+    populares &&
+    filme &&
+    serie &&
+    anime
+  ) {
     closefilme.addEventListener("click", function () {
       video_assimqueacaba.classList.remove("show");
       video_bladerunner.classList.remove("show");
